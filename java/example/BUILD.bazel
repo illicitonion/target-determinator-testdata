@@ -1,6 +1,9 @@
 java_test(
     name = "ExampleTest",
     srcs = ["ExampleTest.java"],
+    deps = [
+        "//java/example/simple",
+    ],
 )
 
 java_test(
