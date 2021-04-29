@@ -1,8 +1,8 @@
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
 def setup():
-    RULES_GIT_TAG = "rules/v0/simple_package"
-    RULES_ARCHIVE_SHA256 = "d150e8af18cf8a86e9c4ac90e314aa18787e1a427bba76e66896d2705cb066a1"
+    RULES_GIT_TAG = "rules/v0/pathological"
+    RULES_ARCHIVE_SHA256 = "8cb9c0dfa265f6ba4378076a859380e275cccd6eda5e6d0f6b43b98259d38f8b"
 
     http_archive(
         name = "rules",
