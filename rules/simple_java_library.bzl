@@ -8,8 +8,14 @@ def _simple_java_library(ctx):
     dep_java_infos = [dep[JavaInfo] for dep in ctx.attr.deps]
     dep_jars = depset(transitive = [dep.compile_jars for dep in dep_java_infos])
 
+    extra_flags = ""
+    if ctx.attr.source:
+        extra_flags += " -source {}".format(ctx.attr.source)
+    if ctx.attr.target:
+        extra_flags += " -target {}".format(ctx.attr.target)
+
     ctx.actions.run_shell(
-        command = "{} -cp {} {} -d {}".format(JAVAC_CMD, ":".join(["."] + [dep.path for dep in dep_jars.to_list()]), ctx.file.src.path, out_classdir.path),
+        command = "{} -cp {} {} -d {}{}".format(JAVAC_CMD, ":".join(["."] + [dep.path for dep in dep_jars.to_list()]), ctx.file.src.path, out_classdir.path, extra_flags),
         inputs = depset(direct = [ctx.file.src], transitive = [dep_jars]),
         outputs = [out_classdir],
         mnemonic = "SimpleJavac",
@@ -31,6 +37,8 @@ simple_java_library = rule(
     implementation = _simple_java_library,
     attrs = {
         "src": attr.label(allow_single_file = [".java"]),
+        "source": attr.string(),
+        "target": attr.string(),
         "deps": attr.label_list(providers = [JavaInfo]),
     },
 )
