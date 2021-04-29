@@ -6,4 +6,6 @@ def simple_java_library(name, src, deps = None, visibility = None):
         src = src,
         deps = deps,
         visibility = visibility,
+        source = "7",
+        target = "7",
     )
