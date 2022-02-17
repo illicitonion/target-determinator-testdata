@@ -5,7 +5,7 @@ simple_java_library(
     name = "simple",
     src = "Simple.java",
     deps = [":simple_dep"],
-    visibility = ["//visibility:public"],
+    visibility = ["//visibility:private"],
 )
 
 simple_java_library(
