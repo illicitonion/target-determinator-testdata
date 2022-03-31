@@ -1,3 +1,0 @@
-[submodule "target-determinator-testdata-submodule"]
-	path = demo-submodule-2
-	url = https://github.com/bazel-contrib/target-determinator-testdata.git
