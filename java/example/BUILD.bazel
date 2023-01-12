@@ -1,4 +1,12 @@
+config_setting(
+    name = "no_srcs_define",
+    values = {"define": "srcs=none"},
+)
+
 java_test(
     name = "ExampleTest",
-    srcs = ["ExampleTest.java"],
+    srcs = select({
+        ":no_srcs_define": [],
+        "//conditions:default": ["ExampleTest.java"],
+    }),
 )
