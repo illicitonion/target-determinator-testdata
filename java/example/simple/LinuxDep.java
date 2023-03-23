@@ -1,5 +1,5 @@
 package example.simple;
 
 public class LinuxDep {
-  public static final String NAME = "LinuxDep";
+  public static final String NAME = "LinuxDep - changed";
 }
