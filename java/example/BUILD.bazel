@@ -1,3 +1,8 @@
+alias(
+    name = "example_test",
+    actual = ":ExampleTest",
+)
+
 java_test(
     name = "ExampleTest",
     srcs = ["ExampleTest.java"],
