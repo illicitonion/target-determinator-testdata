@@ -1,6 +1,6 @@
 alias(
     name = "example_test",
-    actual = ":ExampleTest",
+    actual = ":OtherExampleTest",
 )
 
 java_test(
