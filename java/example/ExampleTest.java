@@ -4,6 +4,6 @@ import org.junit.Test;
 
 public class ExampleTest {
   @Test
-  public void passes() {
+  public void stillPasses() {
   }
 }
